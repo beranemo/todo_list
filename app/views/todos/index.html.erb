@@ -1,0 +1,36 @@
+
+<div style="text-align:center;">
+  <h2>
+    Do your best!</br>
+    <%= link_to 'Create New thing!', new_todo_path %></b2>
+  </h2>
+</div>
+
+  <div class=container>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Status</th>
+        <th scope="col">Event</th>
+        <th scope="col">Due_date</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tfoot>
+  <% @todos.each do |todo| %>
+     <tr>
+      <td><input type="checkbox"></td>
+      <td><%= todo.event %><br><%= link_to 'detail',todo_path(todo)%></td>
+      <td><%= todo.due_date %></td>
+      <td><%= link_to 'Edit',edit_todo_path(todo)%></td>
+      <td><%= link_to 'Destroy',todo_path(todo)%></td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+
+  <% end %>
+
+
+
